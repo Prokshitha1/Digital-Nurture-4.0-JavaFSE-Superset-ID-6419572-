@@ -1,0 +1,26 @@
+public class FinancialForecast {
+
+    // Recursive method to calculate future value
+    public static double futureValue(double investment, double rate, int years) {
+        if (years == 0) {
+            return investment;
+        }
+        return (1 + rate) * futureValue(investment, rate, years - 1);
+    }
+
+    public static void main(String[] args) {
+        double initialInvestment = 1000.00;
+        double annualGrowthRate = 0.05; // 5%
+        int forecastYears = 10;
+
+        double futureVal = futureValue(initialInvestment, annualGrowthRate, forecastYears);
+
+        // Print output matching the format from the image
+        System.out.println("--- Very Short Financial Forecasting ---");
+        System.out.printf("Initial Investment: %.2f\n", initialInvestment);
+        System.out.printf("Annual Growth Rate: %.2f%%\n", annualGrowthRate * 100);
+        System.out.printf("Forecast Years: %d\n", forecastYears);
+        System.out.printf("Predicted Future Value (Recursive): %.2f\n", futureVal);
+        System.out.println("\n=== Code Execution Successful ===");
+    }
+}

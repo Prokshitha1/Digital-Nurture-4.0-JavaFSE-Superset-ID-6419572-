@@ -1,0 +1,24 @@
+public class Main {
+    public static void main(String[] args) {
+        Product[] products = {
+            new Product(101, "Laptop", "Electronics"),
+            new Product(102, "Shoes", "Footwear"),
+            new Product(103, "Book", "Education"),
+            new Product(104, "Mobile", "Electronics"),
+            new Product(105, "Shirt", "Apparel")
+        };
+
+        // Linear Search
+        System.out.println("🔎 Linear Search Result:");
+        Product result1 = SearchService.linearSearch(products, "Mobile");
+        System.out.println(result1 != null ? result1 : "Product not found.");
+
+        // Sort for Binary Search
+        SearchService.sortProductsByName(products);
+
+        // Binary Search
+        System.out.println("\n⚡ Binary Search Result:");
+        Product result2 = SearchService.binarySearch(products, "Mobile");
+        System.out.println(result2 != null ? result2 : "Product not found.");
+    }
+}
